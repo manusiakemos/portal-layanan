@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Auth\RequestPasswordReset;
 use App\Http\Middleware\ForcePasswordChange;
 use App\Settings\GeneralSetting;
@@ -19,6 +20,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
@@ -35,16 +37,9 @@ class AdminPanelProvider extends PanelProvider
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->brandName('Portal Layanan E-Gov')
             ->favicon($this->getFavicon())
-            // ->spa(config('app.spa'))
-            // ->spaUrlExceptions(fn (): array => [
-            //     AgendaResource::class::getUrl(),
-            //     MenuResource::class::getUrl(),
-            //     LocationSetting::class::getUrl(),
-            //     EmployeeResource::class::getUrl(),
-            // ])
             ->id('admin')
             ->path('admin')
-            ->login()                                           
+            ->login(Login::class)
             ->databaseTransactions()
             ->sidebarCollapsibleOnDesktop()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
@@ -53,6 +48,9 @@ class AdminPanelProvider extends PanelProvider
             ->passwordReset(RequestPasswordReset::class)
             ->pages([])
             ->widgets([])
+            ->routes(function () {
+                Route::match(['get', 'post'], 'login', Login::class)->name('auth.login');
+            })
             ->maxContentWidth(MaxWidth::Full)
             ->middleware([
                 EncryptCookies::class,
