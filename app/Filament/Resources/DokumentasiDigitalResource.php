@@ -15,9 +15,9 @@ class DokumentasiDigitalResource extends Resource
     protected static ?string $model = DokumentasiDigital::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-folder';
-    protected static ?string $navigationGroup = 'Kategori dan Fitur Portal';
+    protected static ?string $navigationGroup = 'Fitur Portal';
     protected static ?string $navigationLabel = 'Dokumentasi Digital';
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {

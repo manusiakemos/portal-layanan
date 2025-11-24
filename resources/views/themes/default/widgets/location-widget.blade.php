@@ -5,10 +5,10 @@
 	</div>
 	@if ($address)
 		<small class="font-semibold">{{ $address }}</small>
-	@endif
+	@endif	
 	<div class="flex items-end justify-end">
 		<x-button-link icon="heroicon-o-map-pin" href="https://www.google.com/maps?q={{ $latitude }},{{ $longitude }}"
-			label="Google Maps" />
+			label="Google Maps" />		
 	</div>
 </div>
 

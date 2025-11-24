@@ -12,8 +12,9 @@
         {{-- Dokumen --}}
         <x-pattern.dots>
             <div class="container mx-auto pt-20">
-                <x-widgets.dokumen-widget />                
-            </div>
+                <x-widgets.katalog-widget />
+                <x-widgets.dokumen-widget />
+            </dv>
         </x-pattern.dots>                  
     </main>
     {{-- footer --}}
