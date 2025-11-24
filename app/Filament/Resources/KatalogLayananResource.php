@@ -17,7 +17,7 @@ class KatalogLayananResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Layanan E-Government';
-    protected static ?string $navigationLabel = 'Manajemen Katalog';
+    protected static ?string $navigationLabel = 'Katalog Layanan E-Gov';
     protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form

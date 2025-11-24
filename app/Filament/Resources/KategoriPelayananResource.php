@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 class KategoriPelayananResource extends Resource
 {
     protected static ?string $model = KategoriLayanan::class;
-    protected static ?string $navigationGroup = 'Kategori dan Fitur Portal';
-    protected static ?string $navigationLabel = 'Kategori Layanan E-Gov';
-    protected static ?string $pluralModelLabel = 'Kategori Layanan E-Gov';
+    protected static ?string $navigationGroup = 'Manajemen E-Gov';
+    protected static ?string $navigationLabel = 'Manajemen Layanan E-Gov';
+    protected static ?string $pluralModelLabel = 'Manajemen Layanan E-Gov';
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
     protected static ?int $navigationSort = 2;
 
@@ -69,7 +69,8 @@ class KategoriPelayananResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('deskripsi_kategori')
                     ->label('Deskripsi Kategori')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(30),
                 Tables\Columns\ToggleColumn::make('active')
                     ->label('Aktif'),
                 Tables\Columns\TextColumn::make('created_at')
@@ -85,8 +86,11 @@ class KategoriPelayananResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])->label('Aksi')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

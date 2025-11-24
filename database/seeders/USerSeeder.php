@@ -18,14 +18,14 @@ class USerSeeder extends Seeder
         [
             'name' => 'Super Admin',
             'email' => config('app.super_admin'),
-            'password' => Hash::make('supmin123'),
+            'password' => Hash::make('Diskominf0'),
             'created_at' => now(),
             'updated_at' => now(),
         ],
         [
             'name' => 'Admin',
             'email' => config('app.admin'),
-            'password' => Hash::make('admin123'),
+            'password' => Hash::make('Diskominf0'),
             'created_at' => now(),
             'updated_at' => now(),
         ],

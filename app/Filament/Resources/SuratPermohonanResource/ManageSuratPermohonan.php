@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\SuratPermohonanResource\Pages;
+namespace App\Filament\Resources\SuratPermohonanResource;
 
 use Filament\Actions;
 use App\Filament\Resources\SuratPermohonanResource;

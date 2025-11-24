@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources;
 
-use app\Filament\Resources\SuratPermohonanResource\Pages\ManageSuratPermohonan;
+use app\Filament\Resources\SuratPermohonanResource\ManageSuratPermohonan;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;

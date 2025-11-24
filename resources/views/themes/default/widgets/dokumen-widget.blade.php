@@ -12,7 +12,7 @@
             label="Lihat Semua"/>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         @forelse($dokumenTerbaru as $item)
             <div class="p-4 bg-white shadow rounded-lg flex flex-col justify-between">
                 <div>

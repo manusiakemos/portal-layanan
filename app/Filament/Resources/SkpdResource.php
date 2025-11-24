@@ -15,9 +15,9 @@ use App\Filament\Resources\SkpdResource\Pages\ManageSkpds;
 class SkpdResource extends Resource
 {
     protected static ?string $model = Skpd::class;
-    protected static ?string $navigationGroup = 'Kategori dan Fitur Portal';
-    protected static ?string $navigationLabel = 'Kategori SKPD';
-    protected static ?string $pluralModelLabel = 'Kategori SKPD';
+    protected static ?string $navigationGroup = 'Manajemen E-Gov';
+    protected static ?string $navigationLabel = 'Manajemen SKPD';
+    protected static ?string $pluralModelLabel = 'Manajemen SKPD';
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
     protected static ?int $navigationSort = 1;
 
